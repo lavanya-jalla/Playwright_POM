@@ -3,8 +3,17 @@ import { test,expect} from '../utils/PageFixture';
 
 test.describe('Customer Tests', () => {
 
+<<<<<<< HEAD:tests/ui-layer/e2e/customer.spec.ts
   test.beforeEach(async ({ loginPage }) => {
      await loginPage.doLogin('mngr663755', 'zytytYs')
+=======
+  let customerPage: CustomerPage;
+//login
+  test.beforeEach(async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    customerPage = new CustomerPage(page);
+    await loginPage.doLogin('mngr663755', 'zytytYs');
+>>>>>>> 0a3a5730642f0086cc910bceb38f0e8d9da2814d:tests/e2e/customer.spec.ts
   });
 
  
