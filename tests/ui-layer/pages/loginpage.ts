@@ -14,7 +14,9 @@ export class LoginPage {
 
 
   async doLogin(username: string, password: string) {
-    await this.page.goto('https://demo.guru99.com/V4/index.php');
+     await this.page.goto('', {
+        waitUntil: 'domcontentloaded'
+    });
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.loginButton.click();

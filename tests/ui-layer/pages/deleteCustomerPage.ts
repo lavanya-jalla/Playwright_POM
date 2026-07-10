@@ -25,24 +25,20 @@ export class DeleteCustomerPage{
     }
     async handleAlertWithAccept(){
         this.page.on('dialog',async dialog=>{
-            console.log(dialog.message())
-            await dialog.accept()
+            const message=dialog.message()
+            if(message.includes('Do you really want to delete this Customer')){
+                console.log(message)
+                await dialog.accept()
+            }
+            else if(message.includes('Customer does not exist')){
+
+                console.log(message)
+                await dialog.accept()
+                expect(message).toContain('Customer does not exist')
+            }
         })
     }
-    //  async handleAlertWithAcceptForDeletedCustomerCheck(){
-    //     this.page.once('dialog',async dialog=>{
-    //         console.log(dialog.message())
-    //         expect(dialog.message()).toContain("Do you really want to delete this Customer?")
-    //         await dialog.accept()
-    //     })
-    // }
-        async handleAlertWithAcceptforExistorNot(){
-             this.page.once('dialog',async dialog=>{
-            console.log(dialog.message())
-            expect(dialog.message()).toContain("Customer does not exist!!")
-            await dialog.accept()
-        })
-
-        }
+   
+        
     }
 

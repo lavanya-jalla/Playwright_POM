@@ -82,7 +82,7 @@ export class CustomerPage {
     await this.submitButton.click();
   }
   async successRegistrationMsgValidation(){
-    await expect(this.customerRegistrationSuccessMessage).toBeVisible();
+    await expect(this.customerRegistrationSuccessMessage).toContainText("Customer Registered Successfully!!!");
   }
   async getCustomerId(){
     const customerId=await this.customerIdTable.getByRole('row').nth(3).locator('td').nth(1).textContent();
