@@ -5,7 +5,7 @@ import { CustomerPage } from '../pages/customerPage';
 test.describe('Customer Tests', () => {
 
   let customerPage: CustomerPage;
-
+//login
   test.beforeEach(async ({ page }) => {
     const loginPage = new LoginPage(page);
     customerPage = new CustomerPage(page);
