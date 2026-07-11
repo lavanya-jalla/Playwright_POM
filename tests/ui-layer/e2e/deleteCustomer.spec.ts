@@ -8,7 +8,7 @@ test.describe('Delete Customer Tests', () => {
 
   
 
-  test('Verify Delete Customer Form ', async ({customerPage,deleteCustomerPage,page}) => {
+  test('@delete @customer_delete @regression Verify Delete Customer Form ', async ({customerPage,deleteCustomerPage,page}) => {
     await customerPage.navigateToNewCustomerPage();
     await customerPage.fillCustomerForm('Lavanya Jalla','female','2004-05-02','Manchi Kanti Nagar','Khammam','Telangana','507003','9002020200',`lavanya${Date.now()}@gmail.com`,'1234@');
     await customerPage.clickSubmitBtn();

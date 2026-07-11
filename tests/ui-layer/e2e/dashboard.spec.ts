@@ -6,14 +6,14 @@ test.describe('Dashboard Tests', () => {
     await loginPage.doLogin('mngr663755', 'zytytYs');
   });
 
-  test('Verify Dashboard Page Title', async ({ dashboardPage }) => {
+  test('@dashboard @regression Verify Dashboard Page Title', async ({ dashboardPage }) => {
     await dashboardPage.pageTitle();
   });
 
-  test('Verify Welcome Message', async ({ dashboardPage }) => {
+  test('@dashboard @regression Verify Welcome Message', async ({ dashboardPage }) => {
     await dashboardPage.getWelcomeMessageText();
   });
- test('Verify Menu Items Count', async ({ dashboardPage}) => {
+ test('@dashboard @regression Verify Menu Items Count', async ({ dashboardPage}) => {
   await dashboardPage.menuItemsCountShouldBeFifteen();
 });
 });
