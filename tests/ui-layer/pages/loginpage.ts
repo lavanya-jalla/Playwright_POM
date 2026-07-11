@@ -1,4 +1,6 @@
 import { Locator, Page } from '@playwright/test';
+import dotenv from 'dotenv'
+dotenv.config()
 
 export class LoginPage {
   readonly usernameInput: Locator;
@@ -14,9 +16,7 @@ export class LoginPage {
 
 
   async doLogin(username: string, password: string) {
-     await this.page.goto('', {
-        waitUntil: 'domcontentloaded'
-    });
+     await this.page.goto('');
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.loginButton.click();

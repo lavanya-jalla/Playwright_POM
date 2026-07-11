@@ -4,10 +4,38 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:
+   inputs:
+    environment:
+      description: "Environment"
+      required: true
+      default: test
+      type: choice
+      options:
+        - test
+        - staging
+    tag:
+      description: "Playwright Test Tag"
+      required: true
+      default: "@regression"
+      type: choice
+      options:
+        - "@regression"
+        - "@customer"
+        - "@dashboard"
+        - "@delete"
+        - "@customer_creation"
+        - "@customer_delete"
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    environment: test
+    env:
+      GURU99_BASEURL: ${{vars.BASEURL}}
+      GURU99_USERNAME: ${{secrets.USERNAME}}
+      GURU99_PASSWORD: ${{secrets.PASSWORD}}
+
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -18,7 +46,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx playwright test --grep "${{ inputs.tag  }}"
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:

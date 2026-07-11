@@ -1,9 +1,11 @@
 import { test, expect } from '../utils/PageFixture';
+import dotenv from 'dotenv'
+dotenv.config();
 
 test.describe('Customer Tests', () => {
 
   test.beforeEach(async ({ loginPage }) => {
-    await loginPage.doLogin('mngr663755', 'zytytYs');
+    await loginPage.doLogin(process.env.GURU99_USERNAME!, process.env.GURU99_PASSWORD!);
   });
 
   

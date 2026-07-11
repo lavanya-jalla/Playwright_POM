@@ -3,7 +3,8 @@ import{DeleteCustomerPage} from '../pages/deleteCustomerPage';
 import { CustomerPage } from '../pages/customerPage';
 import { LoginPage } from '../pages/loginpage';
 import {DashboardPage }from '../pages/dashboardPage';
-
+import dotenv from 'dotenv'
+dotenv.config();
 type MyPageFixture={
     loginPage:LoginPage,
     customerPage:CustomerPage;
