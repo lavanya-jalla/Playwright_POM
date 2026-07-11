@@ -1,0 +1,13 @@
+name: Nightly Playwright Tests
+
+on:
+  schedule:
+    - cron: '30 2 * * *'
+
+jobs:
+  nightly:
+    uses: ./.github/workflows/playwright.yml
+    with:
+      environment: test
+      tag: "@regression"
+    secrets: inherit
