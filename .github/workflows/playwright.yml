@@ -8,11 +8,11 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    environment:test
+    environment: test
     env:
-      GURU99_BASEURL:${{vars.BASEURL}}
-      GURU99_USERNAME:${{secrets.USERNAME}}
-      GURU99_PASSWORD:${{secrets.PASSWORD}}
+      GURU99_BASEURL: ${{vars.BASEURL}}
+      GURU99_USERNAME: ${{secrets.USERNAME}}
+      GURU99_PASSWORD: ${{secrets.PASSWORD}}
 
     steps:
     - uses: actions/checkout@v4
