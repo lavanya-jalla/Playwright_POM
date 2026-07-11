@@ -1,5 +1,6 @@
 import {test} from '../utils/PageFixture';
 import dotenv from 'dotenv'
+dotenv.config();
 test.describe('Delete Customer Tests', () => {
     
   test.beforeEach(async ({ loginPage }) => {

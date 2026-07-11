@@ -1,5 +1,6 @@
 import { test, expect } from '../utils/PageFixture';
 import dotenv from 'dotenv'
+dotenv.config();
 
 test.describe('Customer Tests', () => {
 

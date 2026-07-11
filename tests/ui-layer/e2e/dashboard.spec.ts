@@ -1,6 +1,7 @@
 
 import{test}from '../utils/PageFixture';
 import dotenv from 'dotenv'
+dotenv.config();
 test.describe('Dashboard Tests', () => {
   test.beforeEach(async ({ loginPage }) => {
        await loginPage.doLogin(process.env.GURU99_USERNAME!, process.env.GURU99_PASSWORD!);
