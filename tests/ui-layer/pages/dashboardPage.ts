@@ -1,5 +1,6 @@
 
 import { expect, Locator, Page } from '@playwright/test';
+import { Default_MediumTimeOut } from '../utils/helpers';
 
 export class DashboardPage {
   readonly page: Page;
@@ -22,7 +23,8 @@ export class DashboardPage {
     await expect(this.welcomeMessage).toBeVisible();
   }
 
-  async menuItemsCountShouldBeFifteen() {
-    await expect(this.menuItems).toHaveCount(15);
+  async menuItemsCountShouldBeFifteen(expectedMenuItemscount:number) {
+    await expect(this.menuItems.first()).toBeVisible({timeout:Default_MediumTimeOut})
+    await expect(this.menuItems).toHaveCount(expectedMenuItemscount,{timeout:Default_MediumTimeOut});
   }
 }

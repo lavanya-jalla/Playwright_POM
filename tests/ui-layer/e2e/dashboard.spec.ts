@@ -15,6 +15,6 @@ test.describe('Dashboard Tests', () => {
     await dashboardPage.getWelcomeMessageText();
   });
  test('@dashboard @regression Verify Menu Items Count', async ({ dashboardPage}) => {
-  await dashboardPage.menuItemsCountShouldBeFifteen();
+  await dashboardPage.menuItemsCountShouldBeFifteen(15);
 });
 });

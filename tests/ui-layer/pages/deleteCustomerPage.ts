@@ -31,13 +31,13 @@ export class DeleteCustomerPage{
                 await dialog.accept()
             }
             else if(message.includes('Customer does not exist')){
-
                 console.log(message)
-                await dialog.accept()
                 expect(message).toContain('Customer does not exist')
+                await dialog.accept()
             }
         })
     }
+
    
         
     }
