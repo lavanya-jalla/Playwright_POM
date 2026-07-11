@@ -28,7 +28,7 @@ export default defineConfig({
   use: {
     
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: 'process.env.GURU99_BASEURL',
+    baseURL: process.env.GURU99_BASEURL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
