@@ -85,6 +85,7 @@ export class CustomerPage {
     await expect(this.customerRegistrationSuccessMessage).toHaveText('Customer Registered Successfully!!!');
   }
   async getCustomerId(){
+    await expect(this.customerIdTable.first()).toBeVisible({timeout:Default_MediumTimeOut})
     const customerId=await this.customerIdTable.getByRole('row').nth(3).locator('td').nth(1).textContent();
     return customerId;
     

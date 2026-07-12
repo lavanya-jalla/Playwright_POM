@@ -11,12 +11,20 @@ test.describe('Customer Tests', () => {
   
  
 
-  test('Verify New Customer Form Submission', async ({customerPage}) => {
+  test('@newaccount @regression @smoke Verify New Account Form Submission', async ({customerPage,newAccountPage}) => {
     await customerPage.navigateToNewCustomerPage();
     await customerPage.fillCustomerForm('Lavanya Jalla','female','2004-05-02','Manchi Kanti Nagar','Khammam','Telangana','507003','9002020200',`lavanya${Date.now()}@gmail.com`,'1234@');
     await customerPage.clickSubmitBtn();
     await customerPage.successRegistrationMsgValidation();
     const customerId=await customerPage.getCustomerId()
     console.log(`Customer ID: ${customerId}`)
+      await newAccountPage.navigateToNewAcccountPage()
+    await newAccountPage.enterCustomerIdInput(customerId!);
+   await newAccountPage.selectAccountType('Savings');
+    await newAccountPage.enterInitialDeposit('2000');
+    await newAccountPage.clickOnAccountSubmit();
+  
+
   });
 })
+
