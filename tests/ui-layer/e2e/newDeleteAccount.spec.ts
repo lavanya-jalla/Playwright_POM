@@ -6,7 +6,9 @@ test.describe('Delete Customer Tests', () => {
   test.beforeEach(async ({ loginPage }) => {
         await loginPage.doLogin(process.env.GURU99_USERNAME!, process.env.GURU99_PASSWORD!);
   });
-   test('@newaccount @regression @smoke Verify Delete New Account', async ({customerPage,newAccountPage,deleteAccountPage}) => {
+ 
+
+   test('@newaccount @newaccount_delete @regression @smoke Verify Delete New Account', async ({customerPage,newAccountPage,deleteAccountPage}) => {
     await customerPage.navigateToNewCustomerPage();
     await customerPage.fillCustomerForm('Lavanya Jalla','female','2004-05-02','Manchi Kanti Nagar','Khammam','Telangana','507003','9002020200',`lavanya${Date.now()}@gmail.com`,'1234@');
      await customerPage.clickSubmitBtn();
@@ -30,7 +32,8 @@ test.describe('Delete Customer Tests', () => {
   await deleteAccountPage.handleAlertWithAccept();
   await deleteAccountPage.clickOnAccountSubmit();
    
-    
+ 
+
 
   });
 })

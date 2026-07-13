@@ -6,7 +6,7 @@ test.describe('Dashboard Tests', () => {
   test.beforeEach(async ({ loginPage }) => {
        await loginPage.doLogin(process.env.GURU99_USERNAME!, process.env.GURU99_PASSWORD!);
   });
-
+  
   test('@dashboard @regression Verify Dashboard Page Title', async ({ dashboardPage }) => {
     await dashboardPage.pageTitle();
   });

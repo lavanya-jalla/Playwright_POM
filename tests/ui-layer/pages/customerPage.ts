@@ -82,6 +82,7 @@ export class CustomerPage {
     await this.submitButton.click();
   }
   async successRegistrationMsgValidation(){
+    await expect(this.customerRegistrationSuccessMessage).toBeVisible({timeout:Default_MediumTimeOut})
     await expect(this.customerRegistrationSuccessMessage).toHaveText('Customer Registered Successfully!!!');
   }
   async getCustomerId(){

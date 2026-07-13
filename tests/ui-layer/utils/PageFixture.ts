@@ -6,6 +6,7 @@ import {DashboardPage }from '../pages/dashboardPage';
 import dotenv from 'dotenv'
 import { NewAccountPage } from '../pages/newAcoount';
 import { DeleteAccountPage } from '../pages/newDeletetAccount';
+import {LogoutPage}from '../pages/logoutpage';
 dotenv.config();
 type MyPageFixture={
     loginPage:LoginPage,
@@ -13,7 +14,8 @@ type MyPageFixture={
     deleteCustomerPage:DeleteCustomerPage;
     dashboardPage:DashboardPage;
     newAccountPage:NewAccountPage;
-    deleteAccountPage:DeleteAccountPage
+    deleteAccountPage:DeleteAccountPage;
+    logoutPage:LogoutPage,
 
 }
 export const test=Base.extend<MyPageFixture>({
@@ -40,7 +42,11 @@ newAccountPage:async({page},use)=>{
 deleteAccountPage:async({page},use)=>{
     const deleteaccountpage=new DeleteAccountPage(page);
     await use(deleteaccountpage);
-}
+},
+logoutPage:async({page},use)=>{
+    const logoutp=new LogoutPage(page);
+    await use(logoutp)
+},
 
 })
 export { expect } from '@playwright/test';
