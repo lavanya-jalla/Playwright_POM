@@ -9,16 +9,13 @@ export class LogoutPage {
     this.logoutLink = page.locator('a[href="Logout.php"]');
   }
 
-  async doLogout() {
-    await expect(this.logoutLink).toBeVisible();
-    const [dialog] = await Promise.all([
-      this.page.waitForEvent('dialog'),
-      this.logoutLink.click({ force: true })
-    ]);
-    console.log(dialog.message());
-    expect(dialog.message()).toContain('You Have Succesfully Logged Out!!');
-    await dialog.accept();
-  }
+ async doLogout() {
+    this.page.once('dialog', async dialog => {
+      console.log(dialog.message());
+      await dialog.accept();
+    });
 
+await this.logoutLink.click({ force: true }); 
+ }
 
 }

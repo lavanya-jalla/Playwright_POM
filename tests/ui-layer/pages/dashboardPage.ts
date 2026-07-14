@@ -10,9 +10,7 @@ export class DashboardPage {
   constructor(page: Page) {
     this.page = page;
    this.menuItems = page.locator('.menusubnav > li > a');
-    this.welcomeMessage = page.getByText(
-      "Welcome To Manager's Page of Guru99 Bank"
-    );
+    this.welcomeMessage = page.getByText("Welcome To Manager's Page of Guru99 Bank");
   }
 
   async pageTitle() {
