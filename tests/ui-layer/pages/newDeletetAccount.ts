@@ -4,13 +4,15 @@ export class DeleteAccountPage{
     readonly page:Page
     readonly deleteAccountMenuItem:Locator
     readonly AccountIdInput:Locator;
-    readonly accountSubmitBtn:Locator
+    readonly accountSubmitBtn:Locator;
+    readonly resetSubmitBtn:Locator
 
 constructor(page:Page){
         this.page=page
         this.deleteAccountMenuItem=page.getByRole('link',{name:'Delete Account',exact:true})
         this.AccountIdInput=page.locator('input[name="accountno"]');
         this.accountSubmitBtn=page.locator('input[name="AccSubmit"]');
+        this.resetSubmitBtn=page.locator('input[name="res"]')
     }
       async navigateToDeleteAccountPage(){
         await expect(this. deleteAccountMenuItem).toBeEnabled({timeout:Default_MediumTimeOut})
@@ -21,6 +23,9 @@ constructor(page:Page){
     }
     async clickOnAccountSubmit(){
         await this.accountSubmitBtn.click();
+    }
+      async clickOnresetSubmitBtn(){
+        await this.resetSubmitBtn.click();
     }
    async handleAlertWithAccept() {
     this.page.on('dialog', async dialog => {
@@ -37,6 +42,7 @@ constructor(page:Page){
             await dialog.accept();
         }
     });
+  
     }
     }
 

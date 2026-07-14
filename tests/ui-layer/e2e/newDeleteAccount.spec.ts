@@ -36,4 +36,32 @@ test.describe('Delete Customer Tests', () => {
 
 
   });
+  test('@newaccount @newaccount_delete @regression @smoke Verify Delete New Account with reset button', async ({customerPage,newAccountPage,deleteAccountPage}) => {
+    await customerPage.navigateToNewCustomerPage();
+    await customerPage.fillCustomerForm('Lavanya Jalla','female','2004-05-02','Manchi Kanti Nagar','Khammam','Telangana','507003','9002020200',`lavanya${Date.now()}@gmail.com`,'1234@');
+     await customerPage.clickSubmitBtn();
+  await customerPage.successRegistrationMsgValidation();
+  const customerId = await customerPage.getCustomerId();
+  console.log(`Customer ID: ${customerId}`);
+
+  // Creating new Account
+  await newAccountPage.navigateToNewAcccountPage();
+  await newAccountPage.enterCustomerIdInput(customerId!);
+  await newAccountPage.selectAccountType('Savings');
+  await newAccountPage.enterInitialDeposit('2000');
+  await newAccountPage.clickOnAccountSubmit();
+  await newAccountPage.successRegistrationMsgValidation();
+  const accountId = await newAccountPage.getAccountId();
+  console.log(`Account ID: ${accountId}`);
+
+  // Deleting new Account
+  await deleteAccountPage.navigateToDeleteAccountPage();
+  await deleteAccountPage.enterAccountID(accountId!);
+  await deleteAccountPage.handleAlertWithAccept();
+  await deleteAccountPage.clickOnresetSubmitBtn();
+   
+ 
+
+
+  });
 })
