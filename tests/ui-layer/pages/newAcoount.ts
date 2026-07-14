@@ -10,6 +10,8 @@ export class NewAccountPage {
     readonly accountSubmitBtn: Locator;
     readonly AccountRegistrationSuccessMessage: Locator;
     readonly accountTable: Locator;
+    readonly resetBtn:Locator;
+    readonly InvalidDetailsErrMsg:Locator
 
     constructor(page: Page) {
         this.page = page;
@@ -18,6 +20,8 @@ export class NewAccountPage {
         this.accountTypeDropdown = page.locator('select[name="selaccount"]');
         this.initialDepositInput = page.locator('input[name="inideposit"]');
         this.accountSubmitBtn = page.locator('input[value="submit"]');
+        this.resetBtn=page.locator('input[name="reset"]');
+         this.InvalidDetailsErrMsg=page.getByLabel('Characters are not allowed');
 
         // Success page locators
         this.AccountRegistrationSuccessMessage = page.getByText(
@@ -66,4 +70,11 @@ export class NewAccountPage {
         const accountId = await this.accountTable.getByRole('row').nth(3).locator('td').nth(1).textContent();
         return accountId;
     }
+    async makeResetAccount(){
+        await this.resetBtn.click();
+
+    }
+     async invalidAccountErrorMessage(InvalidDetailsErrMsg:String){
+    await expect(this.page.getByText('Characters are not allowed')).toBeVisible({timeout:Default_MediumTimeOut})
+  }
 }
