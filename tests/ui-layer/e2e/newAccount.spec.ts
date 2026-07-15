@@ -1,3 +1,4 @@
+import { customerTestData } from '../testdata/customerTestData';
 import { test,expect} from '../utils/PageFixture';
 import dotenv from 'dotenv'
 dotenv.config();
@@ -11,7 +12,7 @@ test.describe('Customer Tests', () => {
 
   test('@newaccount @regression @smoke Verify New Account Form Submission', async ({customerPage,newAccountPage}) => {
     await customerPage.navigateToNewCustomerPage();
-    await customerPage.fillCustomerForm('Lavanya Jalla','female','2004-05-02','Manchi Kanti Nagar','Khammam','Telangana','507003','9002020200',`lavanya${Date.now()}@gmail.com`,'1234@');
+    await customerPage.fillCustomerForm(customerTestData);
     await customerPage.clickSubmitBtn();
     await customerPage.successRegistrationMsgValidation();
     const customerId=await customerPage.getCustomerId()
@@ -27,7 +28,7 @@ test.describe('Customer Tests', () => {
   
   test('@newaccount @regression @smoke Verify New Account Form Submission with reset button', async ({customerPage,newAccountPage}) => {
     await customerPage.navigateToNewCustomerPage();
-    await customerPage.fillCustomerForm('Lavanya Jalla','female','2004-05-02','Manchi Kanti Nagar','Khammam','Telangana','507003','9002020200',`lavanya${Date.now()}@gmail.com`,'1234@');
+    await customerPage.fillCustomerForm(customerTestData);
     await customerPage.clickSubmitBtn();
     await customerPage.successRegistrationMsgValidation();
     const customerId=await customerPage.getCustomerId()
@@ -42,7 +43,7 @@ test.describe('Customer Tests', () => {
   });
    test('@newaccount @regression @smoke Verify New Account Form Submission with Invalid details', async ({customerPage,newAccountPage}) => {
     await customerPage.navigateToNewCustomerPage();
-    await customerPage.fillCustomerForm('Lavanya Jalla','female','2004-05-02','Manchi Kanti Nagar','Khammam','Telangana','507003','9002020200',`lavanya${Date.now()}@gmail.com`,'1234@');
+    await customerPage.fillCustomerForm(customerTestData);
     await customerPage.clickSubmitBtn();
     await customerPage.successRegistrationMsgValidation();
     const customerId=await customerPage.getCustomerId()
