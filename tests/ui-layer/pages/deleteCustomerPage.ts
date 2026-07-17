@@ -1,5 +1,5 @@
 import {test,Locator,Page,expect}from '@playwright/test';
-import { Default_MediumTimeOut } from '../utils/helpers';
+import { Default_MaxTimeOut } from '../utils/helpers';
 export class DeleteCustomerPage{
     readonly page:Page
     readonly deleteCustomerMenuItem:Locator
@@ -14,11 +14,11 @@ export class DeleteCustomerPage{
     }
 
     async navigateToDeleteCustomerPage(){
-        await expect(this.deleteCustomerMenuItem).toBeEnabled({timeout:Default_MediumTimeOut})
+        await expect(this.deleteCustomerMenuItem).toBeEnabled({timeout:Default_MaxTimeOut})
         await this.deleteCustomerMenuItem.click();
     }
     async enterCustomerIdInput(customerIdInput:string){
-        await this.customerIdInput.fill(customerIdInput,{timeout:Default_MediumTimeOut})
+        await this.customerIdInput.fill(customerIdInput,{timeout:Default_MaxTimeOut})
     }
     async clickOnAccountSubmit(){
         await this.accountSubmitBtn.click();
