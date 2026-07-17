@@ -7,10 +7,6 @@ test.describe('Delete Customer Tests', () => {
   test.beforeEach(async ({ loginPage }) => {
         await loginPage.doLogin(process.env.GURU99_USERNAME!, process.env.GURU99_PASSWORD!);
   });
-      test.afterEach(async ({ logoutPage }) => {
-    await logoutPage.doLogout();
-  });
-
  
 
    test('@newaccount @newaccount_delete @regression @smoke Verify Delete New Account', async ({customerPage,newAccountPage,deleteAccountPage}) => {

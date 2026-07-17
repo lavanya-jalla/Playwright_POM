@@ -1,5 +1,5 @@
 import { Locator, Page, expect } from '@playwright/test';
-import { Default_MediumTimeOut } from '../utils/helpers';
+import { Default_MaxTimeOut } from '../utils/helpers';
 
 export class NewAccountPage {
     readonly page: Page;
@@ -33,14 +33,14 @@ export class NewAccountPage {
 
     async navigateToNewAcccountPage() {
         await expect(this.newAccountMenuItem).toBeEnabled({
-            timeout: Default_MediumTimeOut,
+            timeout: Default_MaxTimeOut,
         });
         await this.newAccountMenuItem.click();
     }
 
     async enterCustomerIdInput(customerId: string) {
         await this.customerIdInput.fill(customerId, {
-            timeout: Default_MediumTimeOut,
+            timeout: Default_MaxTimeOut,
         });
     }
 
@@ -61,12 +61,12 @@ export class NewAccountPage {
     }
 
     async successRegistrationMsgValidation() {
-         await expect(this.AccountRegistrationSuccessMessage).toBeVisible({timeout:Default_MediumTimeOut})
+         await expect(this.AccountRegistrationSuccessMessage).toBeVisible({timeout:Default_MaxTimeOut})
         await expect(this.AccountRegistrationSuccessMessage).toHaveText('Account Generated Successfully!!!');
     }
 
     async getAccountId() {
-        await expect(this.accountTable.first()).toBeVisible({timeout:Default_MediumTimeOut})
+        await expect(this.accountTable.first()).toBeVisible({timeout:Default_MaxTimeOut})
         const accountId = await this.accountTable.getByRole('row').nth(3).locator('td').nth(1).textContent();
         return accountId;
     }
@@ -75,6 +75,6 @@ export class NewAccountPage {
 
     }
      async invalidAccountErrorMessage(InvalidDetailsErrMsg:String){
-    await expect(this.page.getByText('Characters are not allowed')).toBeVisible({timeout:Default_MediumTimeOut})
+    await expect(this.page.getByText('Characters are not allowed')).toBeVisible({timeout:Default_MaxTimeOut})
   }
 }

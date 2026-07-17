@@ -1,5 +1,5 @@
 import { Locator, Page, expect } from '@playwright/test';
-import { Default_MediumTimeOut } from '../utils/helpers';
+import { Default_MaxTimeOut } from '../utils/helpers';
 
 export class CustomerPage {
   private readonly page: Page;
@@ -73,7 +73,7 @@ export class CustomerPage {
 
   async successRegistrationMsgValidation() {
     await expect(this.customerRegistrationSuccessMessage).toBeVisible({
-      timeout: Default_MediumTimeOut,
+      timeout: Default_MaxTimeOut,
     });
 
     await expect(this.customerRegistrationSuccessMessage).toHaveText(
@@ -82,12 +82,12 @@ export class CustomerPage {
   }
 
  async getCustomerId(){
-   await expect(this.customerIdTable.first()).toBeVisible({timeout:Default_MediumTimeOut}) 
+   await expect(this.customerIdTable.first()).toBeVisible({timeout:Default_MaxTimeOut}) 
    const customerId=await this.customerIdTable.getByRole('row').nth(3).locator('td').nth(1).textContent();
     return customerId;
    }
     async invalidPinCodeErrorMessage(InvalidPincodeErrorMsg:String){
-       await expect(this.page.getByText('PIN Code must have 6 Digits')).toBeVisible({timeout:Default_MediumTimeOut}) 
+       await expect(this.page.getByText('PIN Code must have 6 Digits')).toBeVisible({timeout:Default_MaxTimeOut}) 
       }
      }
   
