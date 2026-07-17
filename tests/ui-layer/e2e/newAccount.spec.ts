@@ -9,6 +9,10 @@ test.describe('Customer Tests', () => {
   test.beforeEach(async ({ loginPage }) => {
       await loginPage.doLogin(process.env.GURU99_USERNAME!, process.env.GURU99_PASSWORD!);
 });
+    test.afterEach(async ({ logoutPage }) => {
+    await logoutPage.doLogout();
+  });
+
 
   test('@newaccount @regression @smoke Verify New Account Form Submission', async ({customerPage,newAccountPage}) => {
     await customerPage.navigateToNewCustomerPage();

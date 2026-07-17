@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
-// import dotenv from 'dotenv'
-// dotenv.config()
+import dotenv from 'dotenv'
+dotenv.config()
 export class LogoutPage {
   readonly page: Page;
   readonly logoutLink: Locator;
@@ -16,7 +16,7 @@ export class LogoutPage {
       console.log(dialog.message());
       await dialog.accept();
     });
-    // await this.page.goto("/")
+    await this.page.goto("https://demo.guru99.com/V4/manager/Managerhomepage.php")
 
 await this.logoutLink.click({ force: true }); 
  }
