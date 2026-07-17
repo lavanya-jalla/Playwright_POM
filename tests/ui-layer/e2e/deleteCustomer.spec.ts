@@ -7,10 +7,7 @@ test.describe('Delete Customer Tests', () => {
   test.beforeEach(async ({ loginPage }) => {
         await loginPage.doLogin(process.env.GURU99_USERNAME!, process.env.GURU99_PASSWORD!);
   });
-      test.afterEach(async ({ logoutPage }) => {
-    await logoutPage.doLogout();
-  });
-
+ 
 
   test('@delete @customer_delete @regression Verify Delete Customer Form ', async ({customerPage,deleteCustomerPage,page}) => {
     await customerPage.navigateToNewCustomerPage();
