@@ -9,6 +9,10 @@ test.describe('Dashboard Tests', () => {
     test.afterEach(async ({ logoutPage }) => {
     await logoutPage.doLogout();
   });
+      test.afterEach(async ({ logoutPage }) => {
+    await logoutPage.doLogout();
+  });
+
 
   test('@dashboard @regression Verify Dashboard Page Title', async ({ dashboardPage }) => {
     await dashboardPage.pageTitle();
