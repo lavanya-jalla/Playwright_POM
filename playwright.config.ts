@@ -16,7 +16,7 @@ dotenv.config();
  */
 export default defineConfig({
   timeout: 60000,
-  testDir: './tests/api-layer/e2e/',
+  // testDir: './tests/api-layer/e2e/',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -32,6 +32,8 @@ export default defineConfig({
     
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: process.env.GURU99_BASEURL,
+    screenshot:'only-on-failure',
+    video:'on-first-retry',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -40,8 +42,17 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'ui',
+      testDir:'./tests/ui-layer/e2e',
       use: { ...devices['Desktop Chrome'] },
+    },
+      {
+      name: 'api',
+      testDir:'./tests/api-layer/e2e',
+      use:{
+        screenshot:'off',
+        video:'off'
+      }
     },
 
     // {

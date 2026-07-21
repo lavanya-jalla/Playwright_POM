@@ -5,9 +5,15 @@ on:
     - cron: '30 2 * * *'
 
 jobs:
-  nightly:
+  regression-ui:
     uses: ./.github/workflows/playwright.yml
     with:
       environment: test
       tag: "@regression"
+    secrets: inherit
+  regression-api:
+    uses: ./.github/workflows/playwright.api.yml
+    with:
+      environment: test
+      # tag: "@regression"
     secrets: inherit
