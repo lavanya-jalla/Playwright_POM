@@ -1,0 +1,23 @@
+{
+    "createBookingpayload":{
+    "firstname": "lavanya",
+        "lastname": "jalla",
+        "totalprice": 111,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+    },
+     "createBookingInvalidpayload":{
+    "firstname": "lavanya",
+        "lastname": "jalla",
+        "totalprice": 111,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+    }
+}

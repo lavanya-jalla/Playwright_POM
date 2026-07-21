@@ -1,4 +1,4 @@
-name: Playwright UI Tests
+name: Playwright Api Tests
 on:
   push:
     branches: [ main, master ]
@@ -14,26 +14,12 @@ on:
       options:
         - test
         - staging
-    tag:
-      description: "Playwright Test Tag"
-      required: true
-      default: "@regression"
-      type: choice
-      options:
-        - "@regression"
-        - "@customer"
-        - "@dashboard"
-        - "@delete"
-        - "@customer_creation"
-        - "@customer_delete"
   workflow_call:
     inputs:
       environment:
         required: true
         type: string
-      tag:
-        required: true
-        type: string
+
   
 jobs:
   test:
@@ -41,9 +27,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: test
     env:
-      GURU99_BASEURL: ${{vars.BASEURL}}
-      GURU99_USERNAME: ${{secrets.USERNAME}}
-      GURU99_PASSWORD: ${{secrets.PASSWORD}}
+      GURU99_API_BASEURL: ${{vars.GURU99_API_BASEURL}}
+      GURU99_API_USERNAME: ${{secrets.GURU99_API_USERNAME}}
+      GURU99_API_PASSWORD: ${{secrets.GURU99_API_PASSWORD}}
+      GURU99_API_TOKENURL: ${{secrets.GURU99_API_TOKENURL}}
 
     steps:
     - uses: actions/checkout@v4
@@ -52,10 +39,10 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test --project=ui --grep "${{ inputs.tag  }}"
+    
+    - name: Run Playwright API tests
+      run: npx playwright test --project=api 
+      
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
