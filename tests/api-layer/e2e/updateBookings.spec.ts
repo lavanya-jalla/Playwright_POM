@@ -1,5 +1,6 @@
 import { test, expect, APIResponse } from '@playwright/test';
-import { generateTokenApi } from '../services/generateTokenservice';
+import{generateTokenApi}from '../services/tokenGenerateService'
+
 import payload from '../utility/payloads/createBookingPayload.json'
 import { createBookingApi, updateBookingApi } from '../services/bookingApiService';
 import { getAllBooksApi, getAllBooksByIdApi } from '../services/bookingApiService';
