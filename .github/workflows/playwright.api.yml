@@ -30,7 +30,7 @@ jobs:
       GURU99_API_BASEURL: ${{vars.GURU99_API_BASEURL}}
       GURU99_API_USERNAME: ${{secrets.GURU99_API_USERNAME}}
       GURU99_API_PASSWORD: ${{secrets.GURU99_API_PASSWORD}}
-      GURU99_API_TOKENURL: ${{secrets.GURU99_API_TOKENURL}}
+      GURU99_API_TOKENURL: ${{vars.GURU99_API_TOKENURL}}
 
     steps:
     - uses: actions/checkout@v4
