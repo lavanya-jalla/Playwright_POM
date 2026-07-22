@@ -14,7 +14,7 @@ test.describe('Delete Books by ID Api Tests', () => {
     deleteResponse=await deleteBookingApi(request,id)
   });
 
- test('status is 403', async () => {
+ test('@deleteBooking @regression status is 403', async () => {
   const responseBody = await deleteResponse.text();
   console.log(responseBody);
   expect(deleteResponse.status()).toBe(403);

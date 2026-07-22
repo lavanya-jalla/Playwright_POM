@@ -12,22 +12,22 @@ test.describe('Create Books Api Tests', () => {
         responseBodyCreateBooksApi = await response.json();
         console.log(responseBodyCreateBooksApi)
     });
-    test('status is 200', async ({ request }) => {
+    test('@createBooking @regression status is 200', async ({ request }) => {
         expect(await response.status()).toBe(200);
 
     })
-    test('response data validation', async () => {
+    test('@createBooking @regression response data validation', async () => {
         expect(responseBodyCreateBooksApi.booking).toBeTruthy()
         expect(responseBodyCreateBooksApi.booking.firstname).toBe(payload.createBookingpayload.firstname)
         expect(responseBodyCreateBooksApi.booking.lastname).toBe(payload.createBookingpayload.lastname)
     })
-    test('Schema data validation', async () => {
+    test('@createBooking @regression Schema data validation', async () => {
         expect(typeof responseBodyCreateBooksApi.bookingid).toBe('number')
         expect(typeof responseBodyCreateBooksApi.booking).toBe('object')
         expect(typeof responseBodyCreateBooksApi.booking.bookingdates).toBe('object')
         expect(typeof responseBodyCreateBooksApi.booking.depositpaid).toBe('boolean')
     })
-    test('property check', async () => {
+    test('@createBooking @regression property check', async () => {
           expect(responseBodyCreateBooksApi).toHaveProperty('bookingid');
           expect(responseBodyCreateBooksApi.booking).toHaveProperty('firstname');
           expect(responseBodyCreateBooksApi.booking).toHaveProperty('lastname');

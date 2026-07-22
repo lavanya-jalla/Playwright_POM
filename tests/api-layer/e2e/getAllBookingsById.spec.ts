@@ -31,17 +31,17 @@ test.describe('Get All Books Api Tests by ID', () => {
     await expect(responseBody.bookingdates).toHaveProperty('checkout');
   });
 });
-test.describe('Get All books API Invalid Tests',()=>{
+test.describe('@getAllBooking @regression Get All books API Invalid Tests',()=>{
   test('status code is 404 for id:0',async({request})=>{
     const response=await getAllBooksByIdApi(request,0);
     expect(response.status()).toBe(404);
 
   })
-  test('status code is 404 for id negative:-5',async({request})=>{
+  test('@getAllBooking @regression status code is 404 for id negative:-5',async({request})=>{
     const response=await getAllBooksByIdApi(request,-5);
     expect(response.status()).toBe(404);
 })
-  test('status code is 404 for id special charcters:-5',async({request})=>{
+  test('@getAllBooking @regression status code is 404 for id special charcters:-5',async({request})=>{
     const response=await getAllBooksByIdApi(request,"@#$");
     expect(response.status()).toBe(404);
 })

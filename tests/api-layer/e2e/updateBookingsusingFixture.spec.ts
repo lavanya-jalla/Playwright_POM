@@ -17,13 +17,13 @@ test.describe(' Update books API Tests', () => {
         console.log(`Generated Token: ${authToken}`)
     });
 
-    test('status is 200', async () => {
+    test('@updateBooking @regression status is 200', async () => {
         const responseBody = await updateBookingApiResponse.json();
         console.log(responseBody)
         expect(updateBookingApiResponse.status()).toBe(200);
     });
 
-    test('response data validation', async () => {
+    test('@updateBooking @regression response data validation', async () => {
         const responseBody = await updateBookingApiResponse.json();
         expect(responseBody.firstname).toBe(payload.createBookingpayload.firstname);
         expect(responseBody.lastname).toBe(payload.createBookingpayload.lastname);
@@ -31,13 +31,13 @@ test.describe(' Update books API Tests', () => {
 
     })
 });
-test.describe('Update Booking API Tests-Invalid Tests',()=>{
+test.describe('@updateBooking @regression Update Booking API Tests-Invalid Tests',()=>{
     test('invalid token response is 403',async({request})=>{
         const updateBookingApiResponse=await updateBookingApi(request,payload.createBookingpayload,"jscjmdcijoefkcdkmjdk",4);
         await expect(updateBookingApiResponse.status()).toBe(403)
     })
-    test('empty token response is 403',async({request})=>{
-        const updateBookingApiResponse=await updateBookingApi(request,payload.createBookingpayload,"jscjmdcijoefkcdkmjdk",4);
+    test('@updateBooking @regression empty token response is 403',async({request})=>{
+        const updateBookingApiResponse=await updateBookingApi(request,payload.createBookingpayload," ",4);
         await expect(updateBookingApiResponse.status()).toBe(403)
     })
 })

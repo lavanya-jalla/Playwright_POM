@@ -7,13 +7,13 @@ test.describe('Get All Books API Tests', () => {
         response = await getAllBooksApi(request);
     });
 
-    test('status is 200', async () => {
+    test('@getBooking @regression status is 200', async () => {
         expect(response.status()).toBe(200);
         const responseBody = await response.json();
         console.log(responseBody);
     });
 
-    test('Booking validation', async () => {
+    test('@getBooking @regression Booking validation', async () => {
         const responseBody = await response.json();
         responseBody.forEach((element: any) => {
             expect(element).toHaveProperty('bookingid');

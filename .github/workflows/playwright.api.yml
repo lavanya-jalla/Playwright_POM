@@ -14,6 +14,18 @@ on:
       options:
         - test
         - staging
+    tag:
+      description: "Playwright Test Tag"
+      required: true
+      default: "@regression"
+      type: choice
+      options:
+        - "@regression"
+        - "@createBooking"
+        - "@deleteBooking"
+        - "@getBooking"
+        - "@getAllBooking"
+        - "@updateBooking"
   workflow_call:
     inputs:
       environment:
