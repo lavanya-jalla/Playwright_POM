@@ -6,7 +6,7 @@ on:
 
 jobs:
   regression-ui:
-    uses: ./.github/workflows/playwright.yml
+    uses: ./.github/workflows/playwright.ui.yml
     with:
       environment: test
       tag: "@regression"
@@ -15,5 +15,5 @@ jobs:
     uses: ./.github/workflows/playwright.api.yml
     with:
       environment: test
-      # tag: "@regression"
+      tag: "@regression"
     secrets: inherit
