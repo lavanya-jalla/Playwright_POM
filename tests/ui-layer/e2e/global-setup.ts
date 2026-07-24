@@ -8,8 +8,8 @@ async function globalSetUp() {
     return;
   }
   const browser =await chromium.launch({
-  headless:false,
-  slowMo:500
+  headless: process.env.CI ? true : false,
+  slowMo: process.env.CI ? 0 : 500
 });
  
   const page = await browser.newPage();
