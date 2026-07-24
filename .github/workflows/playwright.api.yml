@@ -42,6 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: test
     env:
+    
       GURU99_API_BASEURL: ${{vars.GURU99_API_BASEURL}}
       GURU99_API_USERNAME: ${{secrets.GURU99_API_USERNAME}}
       GURU99_API_PASSWORD: ${{secrets.GURU99_API_PASSWORD}}
@@ -54,9 +55,17 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
     
     - name: Run Playwright API tests
-      run: npx playwright test --project=api 
+      env:
+          SKIP_GLOBAL_SETUP: "true"
+      run: npx playwright test --project=api
+    
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
      
     - name: Upload Playwright Report
       if: ${{ !cancelled() }}

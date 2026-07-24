@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "PHPSESSID",
-      "value": "0huvk5skser6rdm91bpt5falut",
+      "value": "bn1icrdr94sir0f9vg0ojuhnjj",
       "domain": "demo.guru99.com",
       "path": "/",
       "expires": -1,
@@ -12,60 +12,40 @@
     },
     {
       "name": "_ga",
-      "value": "GA1.1.1037900887.1784872896",
+      "value": "GA1.1.1631562628.1784874110",
       "domain": ".guru99.com",
       "path": "/",
-      "expires": 1819432896.750579,
+      "expires": 1819434113.938498,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "CLID",
-      "value": "27105c9845bd4a429c94b44c6fa9de41.20260724.20270724",
+      "value": "57e3c20e04774af480d745e7e9423364.20260724.20270724",
       "domain": "www.clarity.ms",
       "path": "/",
-      "expires": 1816408895.737681,
+      "expires": 1816410111.313933,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "_clck",
-      "value": "1ykvspk%5E2%5Eg80%5E0%5E2396",
+      "value": "3h48n%5E2%5Eg80%5E0%5E2396",
       "domain": ".guru99.com",
       "path": "/",
-      "expires": 1816408896,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_ga_JLJFWVDS10",
-      "value": "GS2.1.s1784872895$o1$g1$t1784872896$j59$l0$h0",
-      "domain": ".guru99.com",
-      "path": "/",
-      "expires": 1819432896.750345,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_clsk",
-      "value": "py0xr2%5E1784872897192%5E1%5E1%5Ea.clarity.ms%2Fcollect",
-      "domain": ".guru99.com",
-      "path": "/",
-      "expires": 1784959297,
+      "expires": 1816410111,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "MUID",
-      "value": "2B19CAC71F406CA139CFDD671EA86D6B",
+      "value": "341B5886CE0C612934FC4F26CFE46030",
       "domain": ".bing.com",
       "path": "/",
-      "expires": 1818568898.17927,
+      "expires": 1818570112.184443,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -75,17 +55,17 @@
       "value": "0",
       "domain": ".c.bing.com",
       "path": "/",
-      "expires": 1785477698.179379,
+      "expires": 1785478912.184726,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "SRM_B",
-      "value": "2B19CAC71F406CA139CFDD671EA86D6B",
+      "value": "341B5886CE0C612934FC4F26CFE46030",
       "domain": ".c.bing.com",
       "path": "/",
-      "expires": 1818568898.179416,
+      "expires": 1818570112.184827,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -102,10 +82,10 @@
     },
     {
       "name": "MUID",
-      "value": "2B19CAC71F406CA139CFDD671EA86D6B",
+      "value": "341B5886CE0C612934FC4F26CFE46030",
       "domain": ".clarity.ms",
       "path": "/",
-      "expires": 1818568898.32364,
+      "expires": 1818570112.315577,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -115,7 +95,7 @@
       "value": "0",
       "domain": ".c.clarity.ms",
       "path": "/",
-      "expires": 1785477698.323745,
+      "expires": 1785478912.315641,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -125,10 +105,30 @@
       "value": "0",
       "domain": ".c.clarity.ms",
       "path": "/",
-      "expires": 1784873498.323772,
+      "expires": 1784874712.315671,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
+    },
+    {
+      "name": "_ga_JLJFWVDS10",
+      "value": "GS2.1.s1784874110$o1$g1$t1784874113$j57$l0$h0",
+      "domain": ".guru99.com",
+      "path": "/",
+      "expires": 1819434113.938167,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_clsk",
+      "value": "1xnaw32%5E1784874114292%5E2%5E1%5Ea.clarity.ms%2Fcollect",
+      "domain": ".guru99.com",
+      "path": "/",
+      "expires": 1784960514,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
     }
   ],
   "origins": [
@@ -136,16 +136,8 @@
       "origin": "https://demo.guru99.com",
       "localStorage": [
         {
-          "name": "cbox_last_user_check",
-          "value": "{\"cached_at\":1784872897052,\"status\":200}"
-        },
-        {
-          "name": "__storejs_convertbox_viewed_pages",
-          "value": "[\"/V4/manager/Managerhomepage.php\"]"
-        },
-        {
           "name": "__storejs_convertbox_last_log_visit_date",
-          "value": "1784872897583"
+          "value": "1784874112895"
         },
         {
           "name": "__storejs_convertbox_visits",
@@ -153,7 +145,15 @@
         },
         {
           "name": "__storejs_convertbox_session",
-          "value": "{\"last_activity\":1784872897580,\"data\":{}}"
+          "value": "{\"last_activity\":1784874114240,\"data\":{}}"
+        },
+        {
+          "name": "cbox_last_user_check",
+          "value": "{\"cached_at\":1784874112268,\"status\":200}"
+        },
+        {
+          "name": "__storejs_convertbox_viewed_pages",
+          "value": "[\"/V4/manager/Managerhomepage.php\",\"/V4/index.php\"]"
         },
         {
           "name": "__storejs_convertbox_opt_in_emails",
@@ -161,7 +161,7 @@
         },
         {
           "name": "__storejs_convertbox_site_views",
-          "value": "1"
+          "value": "2"
         }
       ]
     }
