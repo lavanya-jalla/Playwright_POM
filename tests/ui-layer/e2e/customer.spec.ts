@@ -6,13 +6,13 @@ dotenv.config();
 
 test.describe('Customer Tests', () => {
 
-  test.beforeEach(async ({ loginPage }) => {
-    await loginPage.doLogin(process.env.GURU99_USERNAME!, process.env.GURU99_PASSWORD!);
-  });
+  // test.beforeEach(async ({ loginPage }) => {
+  //   await loginPage.doLogin(process.env.GURU99_USERNAME!, process.env.GURU99_PASSWORD!);
+  // });
 
-    test.afterEach(async ({ logoutPage }) => {
-    await logoutPage.doLogout();
-  });
+  //   test.afterEach(async ({ logoutPage }) => {
+  //   await logoutPage.doLogout();
+  // });
 
   test('@customer @customer_creation @regression @fast Verify New Customer Form Submission', async ({customerPage}) => {
     await customerPage.navigateToNewCustomerPage();

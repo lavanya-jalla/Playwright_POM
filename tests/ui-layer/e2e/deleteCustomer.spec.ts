@@ -4,11 +4,6 @@ import dotenv from 'dotenv'
 dotenv.config();
 test.describe('Delete Customer Tests', () => {
     
-  test.beforeEach(async ({ loginPage }) => {
-        await loginPage.doLogin(process.env.GURU99_USERNAME!, process.env.GURU99_PASSWORD!);
-  });
- 
-
   test('@delete @customer_delete @regression Verify Delete Customer Form ', async ({customerPage,deleteCustomerPage,page}) => {
     await customerPage.navigateToNewCustomerPage();
     await customerPage.fillCustomerForm(customerTestData);

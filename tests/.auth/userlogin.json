@@ -1,0 +1,169 @@
+{
+  "cookies": [
+    {
+      "name": "PHPSESSID",
+      "value": "0huvk5skser6rdm91bpt5falut",
+      "domain": "demo.guru99.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1037900887.1784872896",
+      "domain": ".guru99.com",
+      "path": "/",
+      "expires": 1819432896.750579,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CLID",
+      "value": "27105c9845bd4a429c94b44c6fa9de41.20260724.20270724",
+      "domain": "www.clarity.ms",
+      "path": "/",
+      "expires": 1816408895.737681,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_clck",
+      "value": "1ykvspk%5E2%5Eg80%5E0%5E2396",
+      "domain": ".guru99.com",
+      "path": "/",
+      "expires": 1816408896,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_JLJFWVDS10",
+      "value": "GS2.1.s1784872895$o1$g1$t1784872896$j59$l0$h0",
+      "domain": ".guru99.com",
+      "path": "/",
+      "expires": 1819432896.750345,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_clsk",
+      "value": "py0xr2%5E1784872897192%5E1%5E1%5Ea.clarity.ms%2Fcollect",
+      "domain": ".guru99.com",
+      "path": "/",
+      "expires": 1784959297,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "MUID",
+      "value": "2B19CAC71F406CA139CFDD671EA86D6B",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1818568898.17927,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1785477698.179379,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "SRM_B",
+      "value": "2B19CAC71F406CA139CFDD671EA86D6B",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1818568898.179416,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "SM",
+      "value": "C",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MUID",
+      "value": "2B19CAC71F406CA139CFDD671EA86D6B",
+      "domain": ".clarity.ms",
+      "path": "/",
+      "expires": 1818568898.32364,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1785477698.323745,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ANONCHK",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1784873498.323772,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://demo.guru99.com",
+      "localStorage": [
+        {
+          "name": "cbox_last_user_check",
+          "value": "{\"cached_at\":1784872897052,\"status\":200}"
+        },
+        {
+          "name": "__storejs_convertbox_viewed_pages",
+          "value": "[\"/V4/manager/Managerhomepage.php\"]"
+        },
+        {
+          "name": "__storejs_convertbox_last_log_visit_date",
+          "value": "1784872897583"
+        },
+        {
+          "name": "__storejs_convertbox_visits",
+          "value": "1"
+        },
+        {
+          "name": "__storejs_convertbox_session",
+          "value": "{\"last_activity\":1784872897580,\"data\":{}}"
+        },
+        {
+          "name": "__storejs_convertbox_opt_in_emails",
+          "value": "[]"
+        },
+        {
+          "name": "__storejs_convertbox_site_views",
+          "value": "1"
+        }
+      ]
+    }
+  ]
+}
