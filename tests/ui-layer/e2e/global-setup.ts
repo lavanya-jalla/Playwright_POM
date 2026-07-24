@@ -3,7 +3,11 @@ import dotenv from 'dotenv'
 dotenv.config();
 
 async function globalSetUp() {
-  const browser =await chromium.launch();({
+  if (process.env.SKIP_GLOBAL_SETUP === "true") {
+    console.log("Skipping global setup for API tests.");
+    return;
+  }
+  const browser =await chromium.launch({
   headless:false,
   slowMo:500
 });
