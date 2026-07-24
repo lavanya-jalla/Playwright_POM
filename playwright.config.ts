@@ -16,6 +16,7 @@ dotenv.config();
  */
 export default defineConfig({
   timeout: 60000,
+  globalSetup:'./tests/ui-layer/e2e/global-setup.ts',
   // testDir: './tests/api-layer/e2e/',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -44,7 +45,9 @@ export default defineConfig({
     {
       name: 'ui',
       testDir:'./tests/ui-layer/e2e',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'] ,
+        storageState:'./tests/.auth/userlogin.json'
+      },
     },
       {
       name: 'api',

@@ -15,6 +15,7 @@ constructor(page:Page){
         this.resetSubmitBtn=page.locator('input[name="res"]')
     }
       async navigateToDeleteAccountPage(){
+         await this.page.goto("https://demo.guru99.com/V4/manager/Managerhomepage.php")
         await expect(this. deleteAccountMenuItem).toBeEnabled({timeout:Default_MediumTimeOut})
         await this.deleteAccountMenuItem.click();
     }

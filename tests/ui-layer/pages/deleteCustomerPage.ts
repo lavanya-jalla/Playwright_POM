@@ -14,6 +14,7 @@ export class DeleteCustomerPage {
     }
 
     async navigateToDeleteCustomerPage() {
+         await this.page.goto("https://demo.guru99.com/V4/manager/Managerhomepage.php")
         await expect(this.deleteCustomerMenuItem).toBeEnabled({ timeout: Default_MaxTimeOut })
         await this.deleteCustomerMenuItem.click();
     }

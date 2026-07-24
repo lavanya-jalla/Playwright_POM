@@ -32,6 +32,7 @@ export class NewAccountPage {
     }
 
     async navigateToNewAcccountPage() {
+         await this.page.goto("https://demo.guru99.com/V4/manager/Managerhomepage.php")
         await expect(this.newAccountMenuItem).toBeEnabled({
             timeout: Default_MaxTimeOut,
         });
